@@ -1,0 +1,24 @@
+<table id="CarTable">
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>Product</th>
+      <th>Item</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let carProduct of CarProducts let i=index">
+      <td>
+        <input
+          id="{{ 'car' + i}}"
+          type="checkbox"
+          (click)="test(carProduct,i)"
+        />
+      </td>
+      <td>{{carProduct.value}}</td>
+      <td>{{carProduct.name}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<label *ngIf="flag">Product is added successfully</label>

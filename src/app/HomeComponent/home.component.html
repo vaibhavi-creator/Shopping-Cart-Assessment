@@ -1,0 +1,17 @@
+<select id="productDropdown" (change)="DropDownOptionChnaged()">
+  <option value="1" selected="selected">All</option>
+  <option value="2">Cars</option>
+  <option value="3">Bikes</option>
+</select>
+<ng-container
+  *ngIf="_productService.isAllProductSelected || _productService.isCarProductSelected"
+>
+  <product-car></product-car>
+</ng-container>
+<ng-container
+  *ngIf="_productService.isAllProductSelected || _productService.isBikeProductSelected"
+>
+  <product-bike></product-bike>
+</ng-container>
+<button type="button" (click)="AddToCart()">Add to Cart</button>
+<label *ngIf="isCartAdded"> Products are added to Cart Successfully!!!</label>

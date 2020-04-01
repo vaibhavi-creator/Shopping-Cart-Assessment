@@ -1,0 +1,31 @@
+<table *ngIf="!ProductAdded">
+  <thead>
+    <th>Category</th>
+    <th>Product Name</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <select id="newProductDropdown">
+          <option value="1">Cars</option>
+          <option value="2">Bikes</option>
+        </select>
+      </td>
+      <td>
+        <input
+          required
+          id="ProductName"
+          type="text"
+          placeholder="Please provide a product name"
+        />
+      </td>
+    </tr>
+    <tr>
+      <button type="submit" (click)="AddNewProduct()">
+        Add New Item
+      </button>
+    </tr>
+  </tbody>
+</table>
+
+<label *ngIf="ProductAdded">Product is added successfully</label>

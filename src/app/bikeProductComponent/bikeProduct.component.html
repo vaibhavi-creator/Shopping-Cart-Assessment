@@ -1,0 +1,22 @@
+<table id="BikeTable">
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>Product</th>
+      <th>Item</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bikeProduct of bikeProducts let i=index ">
+      <td>
+        <input
+          id="{{'bike' + i}}"
+          type="checkbox"
+          (click)="test(bikeProduct,i)"
+        />
+      </td>
+      <td>{{bikeProduct.value}}</td>
+      <td>{{bikeProduct.name}}</td>
+    </tr>
+  </tbody>
+</table>

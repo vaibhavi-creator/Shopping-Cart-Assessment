@@ -1,0 +1,18 @@
+<table *ngIf="_productService.finalCartProducts.length !==0">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Item</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cartProduct of _productService.finalCartProducts ">
+      <td>{{cartProduct.value}}</td>
+      <td>{{cartProduct.name}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="_productService.finalCartProducts.length ===0">
+  Please add Products to Cart....Happy Shopping!!!
+</div>
